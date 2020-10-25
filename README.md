@@ -104,3 +104,7 @@ npm run build
 surge public my-project.surge.sh
 ```
 # Shopping-Cart-Svelte
+
+global.css adapted from Brad Traversy
+
+Royalty free images used from shutterstock
