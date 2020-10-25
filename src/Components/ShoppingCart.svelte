@@ -1,7 +1,7 @@
 <script defer>
     // export let itemsInCart = {};
-    import { CartItems } from "./stores";
-    import CartProduct from "./Components/CartProduct.svelte";
+    import { CartItems } from "../Stores/stores";
+    import CartProduct from "../Components/CartProduct.svelte";
 </script>
 
 <style>

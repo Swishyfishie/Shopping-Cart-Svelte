@@ -34,5 +34,6 @@
 <h1>{productName}</h1>
 <p>Price: {price}</p>
 <p>Category: {category}</p>
-<img src={image} class="img" />
+<!-- svelte-ignore a11y-img-redundant-alt -->
+<img src={image} alt="food image" class="img" />
 <button class="btn btn-primary" on:click={addToCart}>Add to cart</button>

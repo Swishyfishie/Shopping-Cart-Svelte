@@ -1,6 +1,6 @@
 <script>
     import { Products } from "../Stores/stores";
-    import Product from "./Product.svelte";
+    import Product from "../Components/Product.svelte";
 
     let filteredProducts = [];
     const filterCategory = (e) => {
