@@ -1,14 +1,18 @@
 {
+  "homepage": "https://swishyfishie.github.io/Shopping-Cart-Svelte/",
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
+    "gh-pages": "^3.1.0",
     "rollup": "^2.3.4",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^6.0.0",

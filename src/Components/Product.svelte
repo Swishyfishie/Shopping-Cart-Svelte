@@ -1,6 +1,6 @@
 <script>
     import { CartItems } from "../Stores/stores";
-
+    // import { Foods } from "../Stores/stores";
     export let productName;
     export let price;
     export let category;
