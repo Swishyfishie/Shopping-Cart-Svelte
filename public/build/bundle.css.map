@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "Categories.svelte",
+    "ShoppingCart.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\r\n    import { Products } from \"../Stores/stores\";\r\n    import Product from \"../Components/Product.svelte\";\r\n\r\n    let filteredProducts = [];\r\n    const filterCategory = (e) => {\r\n        debugger;\r\n        filteredProducts = [];\r\n        $Products.map((prod) => {\r\n            if (prod.category === e.target.innerText) {\r\n                filteredProducts.push(prod);\r\n            }\r\n        });\r\n    };\r\n\r\n    // reduce the categories so they won't be rendered as duplicates\r\n    let res = $Products.map((e) => e.category);\r\n    let categoryArray = [...new Set(res)];\r\n</script>\r\n\r\n<style>\r\n    #categories {\r\n        display: none;\r\n    }\r\n</style>\r\n\r\n<div class=\"container inline-block\" id=\"categories\">\r\n    <div>\r\n        {#each categoryArray as product}\r\n            <button class=\"btn\" on:click={filterCategory}>{product}</button>\r\n        {/each}\r\n    </div>\r\n\r\n    {#if filteredProducts.length === 0}\r\n        <p>No products available</p>\r\n    {:else}\r\n        {#each filteredProducts as prod}\r\n            <div class=\"card\">\r\n                <Product\r\n                    productName={prod.productName}\r\n                    price={prod.price}\r\n                    category={prod.category}\r\n                    image={prod.image_url} />\r\n            </div>\r\n        {/each}\r\n    {/if}\r\n</div>\r\n",
+    "<script defer>\r\n    // export let itemsInCart = {};\r\n    import { CartItems } from \"../Stores/stores\";\r\n    import CartProduct from \"../Components/CartProduct.svelte\";\r\n</script>\r\n\r\n<style>\r\n    #cartContainer {\r\n        display: none;\r\n        background: aliceblue;\r\n    }\r\n</style>\r\n\r\n<div class=\"container \" id=\"cartContainer\">\r\n    This is the shopping cart. Items here:\r\n    {#each $CartItems as item}\r\n        <CartProduct cartItem={item} />\r\n    {/each}\r\n</div>\r\n"
+  ],
+  "names": [],
+  "mappings": "AAqBI,WAAW,cAAC,CAAC,AACT,OAAO,CAAE,IAAI,AACjB,CAAC;AChBD,cAAc,cAAC,CAAC,AACZ,OAAO,CAAE,IAAI,CACb,UAAU,CAAE,SAAS,AACzB,CAAC"
+}
